@@ -1,3 +1,8 @@
+> [!CAUTION]
+> このコードはほぼAIによって生成されたコードです．
+> usb接続と録画機能しか動作確認していません．
+> APIリファレンスとこのコードを参考に自身でカスタム，検証して使うことを推奨します
+
 # GoPro 11 Black Connection Library
 
 GoPro 11 Black に接続して制御するための Python ライブラリです。
