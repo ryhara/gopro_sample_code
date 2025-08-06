@@ -17,6 +17,7 @@ gopro/
 ├── wifi_connection.py     # WiFi接続用スクリプト
 ├── usb_connection.py      # USB接続用スクリプト
 ├── main.py               # デモスクリプト
+├── video.py              # 録画スクリプト
 ├── pyproject.toml        # プロジェクト設定
 └── README.md
 ```
