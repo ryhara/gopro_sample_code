@@ -1,0 +1,9 @@
+[project]
+name = "gopro"
+version = "0.1.0"
+description = "GoPro 11 Black connection and control library"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+]
