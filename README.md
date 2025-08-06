@@ -13,13 +13,16 @@ GoPro 11 Black に接続して制御するための Python ライブラリです
 
 ```
 gopro/
-├── gopro_connection.py    # メインクラス定義
-├── wifi_connection.py     # WiFi接続用スクリプト
-├── usb_connection.py      # USB接続用スクリプト
-├── main.py               # デモスクリプト
-├── video.py              # 録画スクリプト
-├── pyproject.toml        # プロジェクト設定
-└── README.md
+├── src/
+│   ├── gopro_connection.py    # メインクラス定義
+│   ├── wifi_connection.py     # WiFi接続用スクリプト
+│   ├── usb_connection.py      # USB接続用スクリプト
+│   ├── main.py               # デモスクリプト
+│   ├── video.py              # 録画スクリプト
+│   ├── video_usb.py          # USB接続での録画スクリプト
+│   └── video_wifi.py         # WiFi接続での録画スクリプト
+├── README.md
+└── pyproject.toml
 ```
 
 ## 機能
@@ -36,7 +39,7 @@ gopro/
 ### 依存関係のインストール
 
 ```bash
-pip install -e .
+uv sync
 ```
 
 ### GoPro 11 Black の準備
@@ -44,18 +47,26 @@ pip install -e .
 #### WiFi 接続の場合
 
 1. GoPro カメラの WiFi アクセスポイントを有効にする
-2. カメラに接続（SSID とパスワードはカメラの画面で確認可能）
-3. カメラの IP アドレスは `10.5.5.9:8080`
+   -  GoProとスマホアプリを接続する
+   -  スマホ画面側で`プレビューを有効にする`を押すとWi-FiがONになる
+2. PCからカメラのWiFiに接続（SSID とパスワードはカメラの画面で確認可能）
+3. WiFi用のプログラムを動かす
 
 #### USB 接続の場合
 
 1. USB-C ケーブルでカメラと PC を接続
 2. カメラのシリアル番号を確認（バッテリー収納部のステッカーまたはカメラ UI）
 3. シリアル番号の最後 3 桁から IP アドレスを計算
+4. USB用のプログラムを動かす
 
 ## 使用方法
 
 ### 1. デモスクリプトの実行
+
+```bash
+cd src
+```
+
 
 ```bash
 # 基本的なデモ
@@ -66,6 +77,12 @@ python wifi_connection.py
 
 # USB接続専用
 python usb_connection.py
+
+# USB接続での録画
+python video_usb.py
+
+# WiFi接続での録画
+python video_wifi.py
 ```
 
 ### 2. プログラムでの使用
@@ -195,3 +212,5 @@ python main.py
 ## 参考資料
 
 - [Open GoPro HTTP API Documentation](https://gopro.github.io/OpenGoPro/http#section/Setup)
+- [GoPro 11 Black ユーザーガイド](https://gopro.my.salesforce.com/sfc/p/#o0000000HJuF/a/3b000000NSrS/1pkAnpVWXhuK0VNFbooleEb5480gJ8l_NQOLHAsw6rA)
+- [Quik (Mobile): How To Pair Your Camera](https://community.gopro.com/s/article/GoPro-Quik-How-To-Pair-Your-Camera?language=en_US#Hero91011Black)
