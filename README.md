@@ -20,7 +20,9 @@ gopro/
 │   ├── main.py               # デモスクリプト
 │   ├── video.py              # 録画スクリプト
 │   ├── video_usb.py          # USB接続での録画スクリプト
-│   └── video_wifi.py         # WiFi接続での録画スクリプト
+│   ├── video_wifi.py         # WiFi接続での録画スクリプト
+│   ├── caio.py               # CONTEC Analog I/O device
+│   └── usb_capture.py        # USB接続でCONTEC使用して録画するスクリプト
 ├── README.md
 └── pyproject.toml
 ```
@@ -83,6 +85,9 @@ python video_usb.py
 
 # WiFi接続での録画
 python video_wifi.py
+
+# USB接続でCONTEC使用して録画
+python usb_capture.py
 ```
 
 ### 2. プログラムでの使用
@@ -214,3 +219,4 @@ python main.py
 - [Open GoPro HTTP API Documentation](https://gopro.github.io/OpenGoPro/http#section/Setup)
 - [GoPro 11 Black ユーザーガイド](https://gopro.my.salesforce.com/sfc/p/#o0000000HJuF/a/3b000000NSrS/1pkAnpVWXhuK0VNFbooleEb5480gJ8l_NQOLHAsw6rA)
 - [Quik (Mobile): How To Pair Your Camera](https://community.gopro.com/s/article/GoPro-Quik-How-To-Pair-Your-Camera?language=en_US#Hero91011Black)
+- [contec manual](https://help.contec.com/pc-helper/api-tool-lnx/jp/APITOOL.htm#t=mergedProjects%2FCAIO%2Fusage%2Fsetup_driver_environment.htm)
